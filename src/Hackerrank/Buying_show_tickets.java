@@ -18,10 +18,10 @@ public class Buying_show_tickets {
 	    }
 	    return times;
 	} 
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] myIntArray = {5,2,6,3,4,5,2};
 		System.out.println(times((myIntArray), 2));
-	}*/
+	}
 
 }
