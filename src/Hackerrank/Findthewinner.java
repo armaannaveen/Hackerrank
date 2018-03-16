@@ -2,7 +2,7 @@ package Hackerrank;
 
 import java.util.Arrays;
 
-public class Find_the_winner {
+public class Findthewinner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

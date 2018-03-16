@@ -2,7 +2,7 @@ package Hackerrank;
 
 import java.util.Arrays;
 
-public class Buying_show_tickets {
+public class BuyingShowTickets {
 	public static long times( int[] tickets, int p) {
 	    long times = 0;
 	    int[] temp = Arrays.copyOf(tickets, tickets.length); //creating this array to check whether the *person i* buy tickets less than *person p*

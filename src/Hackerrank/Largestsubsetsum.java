@@ -1,6 +1,6 @@
 package Hackerrank;
 
-public class Largest_subset_sum {
+public class Largestsubsetsum {
 	 static boolean isSubsetSum(int set[], int n, int sum)
 	    {
 	        

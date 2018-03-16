@@ -1,6 +1,6 @@
 package Hackerrank;
 
-public class Consecutive_sum {
+public class ConsecutiveSum {
 	static int countConsecutive(int N)
     {
       

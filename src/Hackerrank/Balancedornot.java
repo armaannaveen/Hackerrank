@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 
-public class Balanced_or_not {
+public class Balancedornot {
 
 	private static boolean checkBalancedParentheses(String input){
 		Stack<String> stack = new Stack<String>();
