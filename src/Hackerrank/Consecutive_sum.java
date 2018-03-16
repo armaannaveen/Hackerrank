@@ -15,7 +15,7 @@ public class Consecutive_sum {
     }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 int N = 15;
+		 int N = 10;
 	        System.out.println(countConsecutive(N));
 	        
 	    }

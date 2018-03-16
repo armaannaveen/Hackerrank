@@ -3,38 +3,57 @@ package Hackerrank;
 import java.util.Scanner;
 import java.util.Stack;
 
+
 public class Balanced_or_not {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	private static boolean checkBalancedParentheses(String input){
+		Stack<String> stack = new Stack<String>();
+		boolean isBalanaced = false;
 
-		 Scanner in = new Scanner(System.in);
-	        int t = in.nextInt();
-	        tests:
-	        for(int a0 = 0; a0 < t; a0++){
-	            String s = in.next();
-	            Stack<Character> stack = new Stack<>();
-	            
-	            for(char c : s.toCharArray())
-	            {
-	                if(c == '<')
-	                    stack.push('>');
-	               
-	                
-	                else{
-	                    if( stack.isEmpty() || c != stack.peek()){
-	                        System.out.println("NO");
-	                        continue tests;    
-	                    }
-	                    else{
-	                        stack.pop();
-	                    }
-	                }
-	            }
-	            if(stack.isEmpty())
-	                System.out.println("1");
-	            else
-	                System.out.println("0");
-	        }
-	    }
+		for(int i=0; i < input.length(); i++){
+			String str = ""+input.charAt(i);		//store characters as String
+
+			//if opening bracket then push into stack
+			if(str.equals("(") || str.equals("<") || str.equals("{")){
+				stack.push(str);
+			}
+
+			//if closing bracket, pop bracket and compare if its a pair
+			if(str.equals(")") || str.equals(">") || str.equals("}")){
+				//if stack becomes empty in between then also its not balanced
+				if(stack.isEmpty()){
+					return false;
+				}
+				String opening = stack.peek();
+				if(str.equals(")") && opening.equals("(")){
+					stack.pop();
+				}
+				if(str.equals(">") && opening.equals("<")){
+					stack.pop();
+				}
+				if(str.equals("}") && opening.equals("{")){
+					stack.pop();
+				}
+			}			
+		}
+		//if stack is empty at end, then its balanced
+		if(input.length() > 0 && stack.isEmpty()){
+			isBalanaced = true;
+		}
+
+		return isBalanaced;
+	}
+
+	public static void main(String[] args) {
+		String[] inputs = {"{<()>}","{<(>)}","{{<<(())>>}}"};		
+
+		for(String input : inputs){
+			boolean flag = checkBalancedParentheses(input);
+			if(flag){	
+				System.out.println("YES");
+			}else{
+				System.out.println("NO");
+			}		
+		}
+	}
 }
